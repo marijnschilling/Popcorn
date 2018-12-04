@@ -1,0 +1,72 @@
+{
+  "adult": false,
+  "backdrop_path": "/xgbeBCjmFpRYHDF7tQ7U98EREWp.jpg",
+  "belongs_to_collection": {
+    "id": 435259,
+    "name": "Fantastic Beasts Collection",
+    "poster_path": "/wsVseA7i3FqX24m26Z2gD3EtH4l.jpg",
+    "backdrop_path": "/7j7eBhReCRafAYdCr5XaJzNAIDz.jpg"
+  },
+  "budget": 200000000,
+  "genres": [
+    {
+      "id": 10751,
+      "name": "Family"
+    },
+    {
+      "id": 14,
+      "name": "Fantasy"
+    },
+    {
+      "id": 12,
+      "name": "Adventure"
+    }
+  ],
+  "homepage": "http://www.fantasticbeasts.com",
+  "id": 338952,
+  "imdb_id": "tt4123430",
+  "original_language": "en",
+  "original_title": "Fantastic Beasts: The Crimes of Grindelwald",
+  "overview": "Gellert Grindelwald has escaped imprisonment and has begun gathering followers to his cause—elevating wizards above all non-magical beings. The only one capable of putting a stop to him is the wizard he once called his closest friend, Albus Dumbledore. However, Dumbledore will need to seek help from the wizard who had thwarted Grindelwald once before, his former student Newt Scamander, who agrees to help, unaware of the dangers that lie ahead. Lines are drawn as love and loyalty are tested, even among the truest friends and family, in an increasingly divided wizarding world.",
+  "popularity": 249.669,
+  "poster_path": "/uyJgTzAsp3Za2TaPiZt2yaKYRIR.jpg",
+  "production_companies": [
+    {
+      "id": 174,
+      "logo_path": "/ky0xOc5OrhzkZ1N6KyUxacfQsCk.png",
+      "name": "Warner Bros. Pictures",
+      "origin_country": "US"
+    },
+    {
+      "id": 437,
+      "logo_path": "/nu20mtwbEIhUNnQ5NXVhHsNknZj.png",
+      "name": "Heyday Films",
+      "origin_country": "GB"
+    }
+  ],
+  "production_countries": [
+    {
+      "iso_3166_1": "GB",
+      "name": "United Kingdom"
+    },
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    }
+  ],
+  "release_date": "2018-11-14",
+  "revenue": 277290490,
+  "runtime": 134,
+  "spoken_languages": [
+    {
+      "iso_639_1": "en",
+      "name": "English"
+    }
+  ],
+  "status": "Released",
+  "tagline": "Fate of One. Future of All.",
+  "title": "Fantastic Beasts: The Crimes of Grindelwald",
+  "video": false,
+  "vote_average": 7,
+  "vote_count": 1775
+}

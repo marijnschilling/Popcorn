@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0AFE66F52D96A835D34A328A /* libPods-Popcorn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBDF6D2F515E1E539DC0441E /* libPods-Popcorn.a */; };
+		D197B2138AA1016A9BFBC20C /* MovieDetails.json in Resources */ = {isa = PBXBuildFile; fileRef = D197B7B914AA2D3D961DAB0C /* MovieDetails.json */; };
+		D197BAC63812E54D2C6AE78B /* Videos.json in Resources */ = {isa = PBXBuildFile; fileRef = D197BF4F2473D66F3FA9F329 /* Videos.json */; };
+		D197BC7C388D4F59F36D331E /* Movies.json in Resources */ = {isa = PBXBuildFile; fileRef = D197B8D8281EB2E7354F54C0 /* Movies.json */; };
 		E64BFC3F21B6989300C8FE15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64BFC3E21B6989300C8FE15 /* AppDelegate.swift */; };
 		E64BFC4121B6989300C8FE15 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64BFC4021B6989300C8FE15 /* ViewController.swift */; };
 		E64BFC4621B6989400C8FE15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E64BFC4521B6989400C8FE15 /* Assets.xcassets */; };
@@ -29,6 +32,9 @@
 		9F59292CE587A2C462733FB3 /* Pods-Popcorn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Popcorn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Popcorn/Pods-Popcorn.debug.xcconfig"; sourceTree = "<group>"; };
 		A783A8DFA32ED372D39BF950 /* Pods-Popcorn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Popcorn.release.xcconfig"; path = "Pods/Target Support Files/Pods-Popcorn/Pods-Popcorn.release.xcconfig"; sourceTree = "<group>"; };
 		CBDF6D2F515E1E539DC0441E /* libPods-Popcorn.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Popcorn.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D197B7B914AA2D3D961DAB0C /* MovieDetails.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MovieDetails.json; sourceTree = "<group>"; };
+		D197B8D8281EB2E7354F54C0 /* Movies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Movies.json; sourceTree = "<group>"; };
+		D197BF4F2473D66F3FA9F329 /* Videos.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Videos.json; sourceTree = "<group>"; };
 		E64BFC3B21B6989300C8FE15 /* Popcorn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Popcorn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E64BFC3E21B6989300C8FE15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E64BFC4021B6989300C8FE15 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +117,9 @@
 			children = (
 				E64BFC5321B6989500C8FE15 /* PopcornTests.swift */,
 				E64BFC5521B6989500C8FE15 /* Info.plist */,
+				D197B8D8281EB2E7354F54C0 /* Movies.json */,
+				D197B7B914AA2D3D961DAB0C /* MovieDetails.json */,
+				D197BF4F2473D66F3FA9F329 /* Videos.json */,
 			);
 			path = PopcornTests;
 			sourceTree = "<group>";
@@ -264,6 +273,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D197BC7C388D4F59F36D331E /* Movies.json in Resources */,
+				D197B2138AA1016A9BFBC20C /* MovieDetails.json in Resources */,
+				D197BAC63812E54D2C6AE78B /* Videos.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
