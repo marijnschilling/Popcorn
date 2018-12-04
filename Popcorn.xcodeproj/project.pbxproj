@@ -11,6 +11,7 @@
 		D197B19DF93F107FD227146A /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B6C901E398A239CC36A0 /* URL+Extensions.swift */; };
 		D197B2059DBACBDC0888E179 /* MovieDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BC5DCBB68B34A9EC9327 /* MovieDetails.swift */; };
 		D197B2138AA1016A9BFBC20C /* MovieDetails.json in Resources */ = {isa = PBXBuildFile; fileRef = D197B7B914AA2D3D961DAB0C /* MovieDetails.json */; };
+		D197B2185E7FE6572A3968C3 /* DataLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = D197B7D459D06D0F4FC7BE6C /* DataLoader.m */; };
 		D197B4F003B99B8D0417BA41 /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B8A4F9A930D42F938B8E /* Movies.swift */; };
 		D197B530EB98E7128DC56792 /* MovieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197B57AFFD635CEEAD98E79 /* MovieTests.swift */; };
 		D197B559928716D1A937D2E0 /* MovieDetailsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D197BC31D4C507863BC50E3A /* MovieDetailsTests.swift */; };
@@ -45,9 +46,11 @@
 		D197B57AFFD635CEEAD98E79 /* MovieTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieTests.swift; sourceTree = "<group>"; };
 		D197B6C901E398A239CC36A0 /* URL+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
 		D197B7B914AA2D3D961DAB0C /* MovieDetails.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MovieDetails.json; sourceTree = "<group>"; };
+		D197B7D459D06D0F4FC7BE6C /* DataLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataLoader.m; sourceTree = "<group>"; };
 		D197B8A4F9A930D42F938B8E /* Movies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movies.swift; sourceTree = "<group>"; };
 		D197B8D8281EB2E7354F54C0 /* Movies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Movies.json; sourceTree = "<group>"; };
 		D197BAC7BAD2681CAB07E886 /* DateFormatter+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extensions.swift"; sourceTree = "<group>"; };
+		D197BBAC32151FBD5D008B1D /* DataLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataLoader.h; sourceTree = "<group>"; };
 		D197BC31D4C507863BC50E3A /* MovieDetailsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailsTests.swift; sourceTree = "<group>"; };
 		D197BC5DCBB68B34A9EC9327 /* MovieDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetails.swift; sourceTree = "<group>"; };
 		D197BF4F2473D66F3FA9F329 /* Videos.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Videos.json; sourceTree = "<group>"; };
@@ -60,6 +63,7 @@
 		E64BFC4A21B6989400C8FE15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E64BFC4F21B6989500C8FE15 /* PopcornTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PopcornTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E64BFC5521B6989500C8FE15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E655B38F21B71ED300526FDA /* Popcorn-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Popcorn-Bridging-Header.h"; path = "Popcorn/Popcorn-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		D197B837F9B2019051252D7D /* NetworkLayer */ = {
+			isa = PBXGroup;
+			children = (
+				D197B7D459D06D0F4FC7BE6C /* DataLoader.m */,
+				D197BBAC32151FBD5D008B1D /* DataLoader.h */,
+			);
+			path = NetworkLayer;
+			sourceTree = "<group>";
+		};
 		E64BFC3221B6989300C8FE15 = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +137,7 @@
 				E64BFC6021B69AA800C8FE15 /* Movie Catalog */,
 				E64BFC5F21B69A9B00C8FE15 /* Extensions */,
 				E64BFC5E21B69A8000C8FE15 /* SupportFiles */,
+				D197B837F9B2019051252D7D /* NetworkLayer */,
 			);
 			path = Popcorn;
 			sourceTree = "<group>";
@@ -150,6 +164,7 @@
 				E64BFC4521B6989400C8FE15 /* Assets.xcassets */,
 				E64BFC4721B6989400C8FE15 /* LaunchScreen.storyboard */,
 				E64BFC4A21B6989400C8FE15 /* Info.plist */,
+				E655B38F21B71ED300526FDA /* Popcorn-Bridging-Header.h */,
 			);
 			path = SupportFiles;
 			sourceTree = "<group>";
@@ -338,6 +353,7 @@
 				D197BAD0210112DF37F3B00C /* DateFormatter+Extensions.swift in Sources */,
 				D197B9F932A7AC7836EDAB5F /* Videos.swift in Sources */,
 				D197B19DF93F107FD227146A /* URL+Extensions.swift in Sources */,
+				D197B2185E7FE6572A3968C3 /* DataLoader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,8 +520,13 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.marijnschilling.Popcorn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/marijnschilling/Projects/Popcorn/Popcorn/Popcorn-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = (
+					"\"${PROJECT_DIR}/../Pods\"/**",
+					"\"${PROJECT_DIR}/../Pods\"/**",
+				);
 			};
 			name = Debug;
 		};
@@ -523,8 +544,13 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.marijnschilling.Popcorn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/marijnschilling/Projects/Popcorn/Popcorn/Popcorn-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = (
+					"\"${PROJECT_DIR}/../Pods\"/**",
+					"\"${PROJECT_DIR}/../Pods\"/**",
+				);
 			};
 			name = Release;
 		};
