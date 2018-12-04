@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E64BFC3F21B6989300C8FE15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64BFC3E21B6989300C8FE15 /* AppDelegate.swift */; };
 		E64BFC4121B6989300C8FE15 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64BFC4021B6989300C8FE15 /* ViewController.swift */; };
-		E64BFC4421B6989300C8FE15 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E64BFC4221B6989300C8FE15 /* Main.storyboard */; };
 		E64BFC4621B6989400C8FE15 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E64BFC4521B6989400C8FE15 /* Assets.xcassets */; };
 		E64BFC4921B6989400C8FE15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E64BFC4721B6989400C8FE15 /* LaunchScreen.storyboard */; };
 		E64BFC5421B6989500C8FE15 /* PopcornTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64BFC5321B6989500C8FE15 /* PopcornTests.swift */; };
@@ -29,7 +28,6 @@
 		E64BFC3B21B6989300C8FE15 /* Popcorn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Popcorn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E64BFC3E21B6989300C8FE15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E64BFC4021B6989300C8FE15 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		E64BFC4321B6989300C8FE15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E64BFC4521B6989400C8FE15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E64BFC4821B6989400C8FE15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E64BFC4A21B6989400C8FE15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -79,7 +77,6 @@
 			children = (
 				E64BFC3E21B6989300C8FE15 /* AppDelegate.swift */,
 				E64BFC4021B6989300C8FE15 /* ViewController.swift */,
-				E64BFC4221B6989300C8FE15 /* Main.storyboard */,
 				E64BFC4521B6989400C8FE15 /* Assets.xcassets */,
 				E64BFC4721B6989400C8FE15 /* LaunchScreen.storyboard */,
 				E64BFC4A21B6989400C8FE15 /* Info.plist */,
@@ -179,7 +176,6 @@
 			files = (
 				E64BFC4921B6989400C8FE15 /* LaunchScreen.storyboard in Resources */,
 				E64BFC4621B6989400C8FE15 /* Assets.xcassets in Resources */,
-				E64BFC4421B6989300C8FE15 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,14 +217,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		E64BFC4221B6989300C8FE15 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E64BFC4321B6989300C8FE15 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		E64BFC4721B6989400C8FE15 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -370,7 +358,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.marijnschilling.Popcorn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -388,7 +376,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.marijnschilling.Popcorn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
