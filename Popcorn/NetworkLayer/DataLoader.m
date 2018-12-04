@@ -19,6 +19,8 @@
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         failure(error);
     }];
+
+    [operation start];
 }
 
 @end
