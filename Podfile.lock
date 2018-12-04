@@ -20,17 +20,21 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - MoreCodable (0.2.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
+  - MoreCodable
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
+    - MoreCodable
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  MoreCodable: 1dd5f2b2ee520c8e594593389c5e3d21147ed648
 
-PODFILE CHECKSUM: f089a67e55d351765de842af8917e452bdc5d6d1
+PODFILE CHECKSUM: d05d99f83599049c699eb7b3eef5ed4c052fb25f
 
 COCOAPODS: 1.5.3
