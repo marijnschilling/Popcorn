@@ -75,11 +75,9 @@
 		E64BFC3D21B6989300C8FE15 /* Popcorn */ = {
 			isa = PBXGroup;
 			children = (
-				E64BFC3E21B6989300C8FE15 /* AppDelegate.swift */,
-				E64BFC4021B6989300C8FE15 /* ViewController.swift */,
-				E64BFC4521B6989400C8FE15 /* Assets.xcassets */,
-				E64BFC4721B6989400C8FE15 /* LaunchScreen.storyboard */,
-				E64BFC4A21B6989400C8FE15 /* Info.plist */,
+				E64BFC6021B69AA800C8FE15 /* Movie Catalog */,
+				E64BFC5F21B69A9B00C8FE15 /* Extensions */,
+				E64BFC5E21B69A8000C8FE15 /* SupportFiles */,
 			);
 			path = Popcorn;
 			sourceTree = "<group>";
@@ -91,6 +89,64 @@
 				E64BFC5521B6989500C8FE15 /* Info.plist */,
 			);
 			path = PopcornTests;
+			sourceTree = "<group>";
+		};
+		E64BFC5E21B69A8000C8FE15 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				E64BFC3E21B6989300C8FE15 /* AppDelegate.swift */,
+				E64BFC4521B6989400C8FE15 /* Assets.xcassets */,
+				E64BFC4721B6989400C8FE15 /* LaunchScreen.storyboard */,
+				E64BFC4A21B6989400C8FE15 /* Info.plist */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		E64BFC5F21B69A9B00C8FE15 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E64BFC6021B69AA800C8FE15 /* Movie Catalog */ = {
+			isa = PBXGroup;
+			children = (
+				E64BFC6421B69AEC00C8FE15 /* DataLoader */,
+				E64BFC6321B69AE500C8FE15 /* Models */,
+				E64BFC6221B69ACE00C8FE15 /* Views */,
+				E64BFC6121B69AC600C8FE15 /* ViewControllers */,
+			);
+			path = "Movie Catalog";
+			sourceTree = "<group>";
+		};
+		E64BFC6121B69AC600C8FE15 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				E64BFC4021B6989300C8FE15 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		E64BFC6221B69ACE00C8FE15 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E64BFC6321B69AE500C8FE15 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E64BFC6421B69AEC00C8FE15 /* DataLoader */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataLoader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,7 +406,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 343GHNYHS2;
-				INFOPLIST_FILE = Popcorn/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Popcorn/SupportFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -368,7 +424,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 343GHNYHS2;
-				INFOPLIST_FILE = Popcorn/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Popcorn/SupportFiles/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
