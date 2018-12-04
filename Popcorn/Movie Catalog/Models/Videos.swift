@@ -5,16 +5,17 @@
 
 import Foundation
 
-struct Video: Decodable {
 
-//"id": "5aa8022b9251415e39020579",
-//"iso_639_1": "en",
-//"iso_3166_1": "US",
-//"key": "5sEaYB4rLFQ",
-//"name": "Fantastic Beasts: The Crimes of Grindelwald - Official Teaser Trailer",
-//"site": "YouTube",
-//"size": 1080,
-//"type": "Teaser"
+struct VideoWrapper: Decodable {
+    var url: URL? {
+        // TODO: Look at these mapping operations, maybe they can be improved
+        return results.map { $0.url }.compactMap { $0 }.first
+    }
+
+    let results: [Video]
+}
+
+struct Video: Decodable {
     let url: URL?
 
     private enum CodingKeys : String, CodingKey {
@@ -27,7 +28,7 @@ extension Video {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
-        let site = try container.decode(String.self, forKey: .key)
+        let site = try container.decode(String.self, forKey: .site)
         let key = try container.decode(String.self, forKey: .key)
 
         guard site == "YouTube" else {
@@ -37,8 +38,4 @@ extension Video {
 
         url = URL.youTubeURL(for: key)
     }
-}
-
-struct VideoWrapper: Codable {
-    
 }

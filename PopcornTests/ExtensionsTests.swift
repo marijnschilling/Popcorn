@@ -10,6 +10,6 @@ class ExtensionsTest: XCTestCase {
 
     func testYoutubeURL() {
         let youTubeURL = URL.youTubeURL(for: "key")
-        XCTAssertEqual(youTubeURL?.absoluteString, "wikipedia://places?latitude=1.000000&longitude=2.000000")
+        XCTAssertEqual(youTubeURL?.absoluteString, "https://www.youtube.com/watch?v=key")
     }
 }
