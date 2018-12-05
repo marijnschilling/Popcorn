@@ -8,9 +8,10 @@ import MoreCodable
 
 final class MovieCatalogDataLoader {
     enum MovieCatalogDataLoaderError: Error {
-        case badURL
-        case unknown
+        case invalidURL
+        case invalidResponse
         case noMoreMovies
+        case unknown
     }
 
     static let apiKey = "3b7ad5dde84acc0a427e3fd01285a3c1"
@@ -28,13 +29,16 @@ final class MovieCatalogDataLoader {
         }
 
         guard let url = URL.fetchMovieURL(forPage: movieCatalogPage + 1) else {
-            completion(nil, MovieCatalogDataLoaderError.badURL)
+            completion(nil, MovieCatalogDataLoaderError.invalidURL)
             return
         }
 
         dataLoader.fetchData(for: URLRequest(url: url), withSuccess: { [weak self] data in
             guard let dictionary = data as? NSDictionary,
-                  let movieWrapper = try? DictionaryDecoder().decode(MovieWrapper.self, from: dictionary)  else { return }
+                  let movieWrapper = try? DictionaryDecoder().decode(MovieWrapper.self, from: dictionary)  else {
+                completion(nil, MovieCatalogDataLoaderError.invalidResponse)
+                return
+            }
 
             self?.movieCatalogPage = movieWrapper.page
             self?.totalPages = movieWrapper.totalPages
@@ -47,14 +51,16 @@ final class MovieCatalogDataLoader {
 
     func fetchMovieDetails(for identifier: Int, completion: @escaping (_ moviesDetails: MovieDetails?, _ error: Error?) -> Void) {
 
-        guard let url = URL.fetchMovieDetailsURL(forIdentifier: identifier) else { return }
+        guard let url = URL.fetchMovieDetailsURL(forIdentifier: identifier) else {
+            completion(nil, MovieCatalogDataLoaderError.invalidURL)
+            return
+        }
 
         dataLoader.fetchData(for: URLRequest(url: url), withSuccess: { data in
-            guard let dictionary = data as? NSDictionary else {
+            guard let dictionary = data as? NSDictionary, let movieDetails = try? DictionaryDecoder().decode(MovieDetails.self, from: dictionary)  else {
+                completion(nil, MovieCatalogDataLoaderError.invalidResponse)
                 return
             }
-
-            guard let movieDetails = try? DictionaryDecoder().decode(MovieDetails.self, from: dictionary)  else { return }
 
             completion(movieDetails, nil)
         }, failure: { error in
