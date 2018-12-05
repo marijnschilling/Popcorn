@@ -21,20 +21,24 @@ PODS:
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
   - MoreCodable (0.2.0)
+  - TinyConstraints (3.3.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.0)
   - MoreCodable
+  - TinyConstraints
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - AFNetworking
     - MoreCodable
+    - TinyConstraints
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   MoreCodable: 1dd5f2b2ee520c8e594593389c5e3d21147ed648
+  TinyConstraints: dbf7519aefc01ea59d62244300c7718aec68e280
 
-PODFILE CHECKSUM: d05d99f83599049c699eb7b3eef5ed4c052fb25f
+PODFILE CHECKSUM: 1aff12595f525c0cc5b801a33cc5e2f0300e2757
 
 COCOAPODS: 1.5.3
