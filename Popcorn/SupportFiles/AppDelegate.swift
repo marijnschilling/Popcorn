@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         guard let window = self.window else { fatalError("Window not found") }
 
-        window.rootViewController = UINavigationController(rootViewController: UIViewController())
+        window.rootViewController = UINavigationController(rootViewController: MovieCatalogViewController())
 
         window.makeKeyAndVisible()
 
