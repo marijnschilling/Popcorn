@@ -16,15 +16,31 @@ extension URL {
         return components.url
     }
     
-    static func fetchMovieURL(for apiKey: String, page: Int) -> URL? {
+    static func fetchMovieURL(forPage page: Int) -> URL? {
+        var components = URLComponents.theMovieDBURLComponents()
+        components.path.append("/popular")
+        components.queryItems?.append(URLQueryItem(name: "page", value: "\(page)"))
+
+        return components.url
+    }
+
+    static func fetchMovieDetailsURL(forIdentifier identifier: Int) -> URL? {
+        var components = URLComponents.theMovieDBURLComponents()
+        components.path.append("/\(identifier)")
+
+        return components.url
+    }
+}
+
+extension URLComponents {
+    static func theMovieDBURLComponents() -> URLComponents {
         var components = URLComponents()
         components.scheme = "https"
         components.host = "api.themoviedb.org"
-        components.path = "/3/movie/popular"
-        components.queryItems = [URLQueryItem(name: "api_key", value: apiKey),
-                                 URLQueryItem(name: "language", value: "en-US"),
-                                 URLQueryItem(name: "page", value: "\(page)")]
+        components.path = "/3/movie"
+        components.queryItems = [URLQueryItem(name: "api_key", value: MovieCatalogDataLoader.apiKey),
+                                 URLQueryItem(name: "language", value: "en-US")]
 
-        return components.url
+        return components
     }
 }

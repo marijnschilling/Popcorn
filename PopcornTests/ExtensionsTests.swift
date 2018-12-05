@@ -14,7 +14,12 @@ class ExtensionsTest: XCTestCase {
     }
 
     func testMovieURL() {
-        let youTubeURL = URL.fetchMovieURL(for: "apiKey", page: 4)
-        XCTAssertEqual(youTubeURL?.absoluteString, "https://www.youtube.com/watch?v=key")
+        let youTubeURL = URL.fetchMovieURL(forPage: 4)
+        XCTAssertEqual(youTubeURL?.absoluteString, "https://api.themoviedb.org/3/movie/popular?api_key=3b7ad5dde84acc0a427e3fd01285a3c1&language=en-US&page=4")
+    }
+
+    func testMovieDetailsURL() {
+        let youTubeURL = URL.fetchMovieDetailsURL(forIdentifier: 12344)
+        XCTAssertEqual(youTubeURL?.absoluteString, "https://api.themoviedb.org/3/movie/12344?api_key=3b7ad5dde84acc0a427e3fd01285a3c1&language=en-US")
     }
 }
