@@ -33,6 +33,7 @@ class MovieTests: XCTestCase {
 
             let movie = movies.first
             XCTAssertNotNil(movie)
+            XCTAssertEqual(movie?.id, 335983)
             XCTAssertEqual(movie?.title, "Venom")
             XCTAssertEqual(movie?.posterPath, "/2uNW4WbgBXL25BAbXGLnLqX71Sw.jpg")
         } catch {
