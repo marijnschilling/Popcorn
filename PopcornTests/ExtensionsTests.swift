@@ -12,4 +12,9 @@ class ExtensionsTest: XCTestCase {
         let youTubeURL = URL.youTubeURL(for: "key")
         XCTAssertEqual(youTubeURL?.absoluteString, "https://www.youtube.com/watch?v=key")
     }
+
+    func testMovieURL() {
+        let youTubeURL = URL.fetchMovieURL(for: "apiKey", page: 4)
+        XCTAssertEqual(youTubeURL?.absoluteString, "https://www.youtube.com/watch?v=key")
+    }
 }
