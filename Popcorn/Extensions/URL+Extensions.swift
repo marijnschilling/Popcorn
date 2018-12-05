@@ -30,6 +30,13 @@ extension URL {
 
         return components.url
     }
+
+    static func fetchTrailerURL(forIdentifier identifier: Int) -> URL? {
+        var components = URLComponents.theMovieDBURLComponents()
+        components.path.append("/\(identifier)/videos")
+
+        return components.url
+    }
 }
 
 extension URLComponents {

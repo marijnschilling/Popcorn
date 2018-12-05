@@ -67,4 +67,24 @@ final class MovieCatalogDataLoader {
             completion(nil, error ?? MovieCatalogDataLoaderError.unknown)
         })
     }
+
+
+    func fetchTrailerURL(for identifier: Int, completion: @escaping (_ trailerURL: URL?, _ error: Error?) -> Void) {
+
+        guard let url = URL.fetchTrailerURL(forIdentifier: identifier) else {
+            completion(nil, MovieCatalogDataLoaderError.invalidURL)
+            return
+        }
+
+        dataLoader.fetchData(for: URLRequest(url: url), withSuccess: { data in
+            guard let dictionary = data as? NSDictionary, let videoWrapper = try? DictionaryDecoder().decode(VideoWrapper.self, from: dictionary)  else {
+                completion(nil, MovieCatalogDataLoaderError.invalidResponse)
+                return
+            }
+
+            completion(videoWrapper.url, nil)
+        }, failure: { error in
+            completion(nil, error ?? MovieCatalogDataLoaderError.unknown)
+        })
+    }
 }
