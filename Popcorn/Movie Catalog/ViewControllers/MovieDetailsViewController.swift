@@ -5,8 +5,6 @@
 
 import UIKit
 import TinyConstraints
-import AVFoundation
-import AVKit
 
 final class MovieDetailsViewController: UIViewController {
     private var movieDetails: MovieDetails
@@ -17,6 +15,12 @@ final class MovieDetailsViewController: UIViewController {
         backgroundImage.alpha = 0.3
 
         return backgroundImage
+    }()
+
+    private lazy var playerView: YouTubePlayerView = {
+        let playerView = YouTubePlayerView()
+
+        return playerView
     }()
 
     init(movieDetails: MovieDetails, dataLoader: MovieCatalogDataLoader) {
@@ -49,11 +53,7 @@ final class MovieDetailsViewController: UIViewController {
                 weakSelf.showErrorAlert(error)
                 return
             }
-            let player = AVPlayer(url: url)
-            let playerLayer = AVPlayerLayer(player: player)
-            playerLayer.frame = weakSelf.view.bounds
-            weakSelf.view.layer.addSublayer(playerLayer)
-            player.play()
+            weakSelf.playerView.loadVideoURL(url)
          }
     }
 
@@ -64,5 +64,7 @@ final class MovieDetailsViewController: UIViewController {
     private func addSubviewsAndConstraints() {
         view.addSubview(backgroundImageView)
         backgroundImageView.edges(to: view)
+        view.addSubview(playerView)
+        playerView.edges(to: view)
     }
 }
