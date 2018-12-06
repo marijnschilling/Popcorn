@@ -603,6 +603,7 @@
 		};
 		E64BFC5C21B6989500C8FE15 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91246211CD18272D510D05E2 /* Pods-Popcorn.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
