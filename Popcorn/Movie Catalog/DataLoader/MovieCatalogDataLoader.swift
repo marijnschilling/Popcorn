@@ -3,7 +3,7 @@
 // Copyright (c) 2018 Marijn Schilling. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 final class MovieCatalogDataLoader {
     enum MovieCatalogDataLoaderError: Error {
@@ -81,6 +81,30 @@ final class MovieCatalogDataLoader {
             }
 
             completion(videoWrapper.url, nil)
+        }, failure: { error in
+            completion(nil, error ?? MovieCatalogDataLoaderError.unknown)
+        })
+    }
+
+    func downloadPosterImage(for posterPath: String, completion: @escaping (_ poster: UIImage?, _ error: Error?) -> Void) {
+
+        guard let url = URL.downloadPosterURL(forPosterPath: posterPath) else {
+            completion(nil, MovieCatalogDataLoaderError.invalidURL)
+            return
+        }
+
+        dataLoader.fetchData(for: URLRequest(url: url), withSuccess: { data in
+            guard let data = data as? Data else {
+                completion(nil, MovieCatalogDataLoaderError.invalidResponse)
+                return
+            }
+
+            guard let image = UIImage(data: data) else {
+                completion(nil, MovieCatalogDataLoaderError.invalidResponse)
+                return
+            }
+
+            completion(image, nil)
         }, failure: { error in
             completion(nil, error ?? MovieCatalogDataLoaderError.unknown)
         })

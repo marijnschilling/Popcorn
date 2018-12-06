@@ -73,12 +73,13 @@ class MovieCatalogViewController: UIViewController, UICollectionViewDataSource, 
 
         let movie = movies[indexPath.item]
 
-        // TODO: fetch images asynchronously
-        guard let url = URL.fetchPosterURL(forPosterPath: movie.posterPath), let data = try? Data(contentsOf: url) else {
-            return cell
+        cell.tag = indexPath.row
+        dataLoader.downloadPosterImage(for: movie.posterPath) { image, error in
+          guard cell.tag == indexPath.row else { return }
+            cell.imageView.image = image
         }
-        cell.imageView.image = UIImage(data: data)
 
+        // Load more movies when we are displaying the last cell
         if (indexPath.item == movies.count - 1 ) {
             loadMovieCatalog()
         }

@@ -38,7 +38,7 @@ extension URL {
         return components.url
     }
 
-    static func fetchPosterURL(forPosterPath posterPath: String) -> URL? {
+    static func downloadPosterURL(forPosterPath posterPath: String) -> URL? {
         var components = URLComponents()
         components.scheme = "https"
         components.host = "image.tmdb.org"
