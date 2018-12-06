@@ -32,7 +32,7 @@ class MovieDetailsTests: XCTestCase {
         }
 
         do {
-            let movieDetails = try JSONDecoder().decode(MovieDetails.self, from: jsonData)
+            let movieDetails = try JSONDecoder.movieDetailsDecoder.decode(MovieDetails.self, from: jsonData)
             XCTAssertNotNil(movieDetails)
             XCTAssertEqual(movieDetails.title, "Fantastic Beasts: The Crimes of Grindelwald")
             XCTAssertEqual(movieDetails.tagline, "Fate of One. Future of All.")

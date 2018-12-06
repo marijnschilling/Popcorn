@@ -34,8 +34,7 @@ final class MovieCatalogDataLoader {
         }
 
         dataLoader.fetchData(for: URLRequest(url: url), withSuccess: { [weak self] data in
-            guard let dictionary = data as? NSDictionary,
-                  let movieWrapper = try? DictionaryDecoder().decode(MovieWrapper.self, from: dictionary)  else {
+            guard let dictionary = data as? Data, let movieWrapper = try? JSONDecoder().decode(MovieWrapper.self, from: dictionary)  else {
                 completion(nil, MovieCatalogDataLoaderError.invalidResponse)
                 return
             }
@@ -57,7 +56,7 @@ final class MovieCatalogDataLoader {
         }
 
         dataLoader.fetchData(for: URLRequest(url: url), withSuccess: { data in
-            guard let dictionary = data as? NSDictionary, let movieDetails = try? DictionaryDecoder().decode(MovieDetails.self, from: dictionary)  else {
+            guard let dictionary = data as? Data, let movieDetails = try? JSONDecoder.movieDetailsDecoder.decode(MovieDetails.self, from: dictionary)  else {
                 completion(nil, MovieCatalogDataLoaderError.invalidResponse)
                 return
             }
@@ -77,7 +76,7 @@ final class MovieCatalogDataLoader {
         }
 
         dataLoader.fetchData(for: URLRequest(url: url), withSuccess: { data in
-            guard let dictionary = data as? NSDictionary, let videoWrapper = try? DictionaryDecoder().decode(VideoWrapper.self, from: dictionary)  else {
+            guard let dictionary = data as? Data, let videoWrapper = try? JSONDecoder().decode(VideoWrapper.self, from: dictionary)  else {
                 completion(nil, MovieCatalogDataLoaderError.invalidResponse)
                 return
             }
