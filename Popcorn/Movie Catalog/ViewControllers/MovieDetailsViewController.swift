@@ -10,11 +10,14 @@ final class MovieDetailsViewController: UIViewController {
     private var movieDetails: MovieDetails
     private var dataLoader: MovieCatalogDataLoader
 
-    private lazy var backgroundImageView: UIImageView = {
-        let backgroundImage = UIImageView()
-        backgroundImage.alpha = 0.3
+    private lazy var backgroundImageView = UIImageView()
 
-        return backgroundImage
+    private lazy var overlayView: UIView = {
+        let overlayView = UIView()
+        overlayView.backgroundColor = .black
+        overlayView.alpha = 0.8
+
+        return overlayView
     }()
 
     private lazy var playerView = YouTubePlayerView()
@@ -26,7 +29,6 @@ final class MovieDetailsViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
 
         title = movieDetails.title
-        view.backgroundColor = .darkGray
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -65,6 +67,9 @@ final class MovieDetailsViewController: UIViewController {
     private func addSubviewsAndConstraints() {
         view.addSubview(backgroundImageView)
         backgroundImageView.edges(to: view)
+
+        view.addSubview(overlayView)
+        overlayView.edges(to: view)
 
         view.addSubview(activityIndicator)
         activityIndicator.center(in: view)
