@@ -40,8 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9F0382636E9AF6A5CE5FCE4E /* Pods-Popcorn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Popcorn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Popcorn/Pods-Popcorn.debug.xcconfig"; sourceTree = "<group>"; };
 		A783A8DFA32ED372D39BF950 /* Pods-Popcorn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Popcorn.release.xcconfig"; path = "Pods/Target Support Files/Pods-Popcorn/Pods-Popcorn.release.xcconfig"; sourceTree = "<group>"; };
-		CBD60F966B88F838A7CBD5EE /* Pods-Popcorn.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Popcorn.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Popcorn/Pods-Popcorn.debug.xcconfig"; sourceTree = "<group>"; };
 		CBDF6D2F515E1E539DC0441E /* libPods-Popcorn.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Popcorn.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D197B325F7F23919E6CB2C70 /* MovieCatalogCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCatalogCell.swift; sourceTree = "<group>"; };
 		D197B3DF686EBDCE3F533A6C /* Videos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Videos.swift; sourceTree = "<group>"; };
@@ -101,7 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				A783A8DFA32ED372D39BF950 /* Pods-Popcorn.release.xcconfig */,
-				CBD60F966B88F838A7CBD5EE /* Pods-Popcorn.debug.xcconfig */,
+				9F0382636E9AF6A5CE5FCE4E /* Pods-Popcorn.debug.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -516,7 +516,7 @@
 		};
 		E64BFC5921B6989500C8FE15 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CBD60F966B88F838A7CBD5EE /* Pods-Popcorn.debug.xcconfig */;
+			baseConfigurationReference = 9F0382636E9AF6A5CE5FCE4E /* Pods-Popcorn.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -564,7 +564,6 @@
 		};
 		E64BFC5C21B6989500C8FE15 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CBD60F966B88F838A7CBD5EE /* Pods-Popcorn.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
