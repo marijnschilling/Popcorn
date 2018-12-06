@@ -17,11 +17,8 @@ final class MovieDetailsViewController: UIViewController {
         return backgroundImage
     }()
 
-    private lazy var playerView: YouTubePlayerView = {
-        let playerView = YouTubePlayerView()
-
-        return playerView
-    }()
+    private lazy var playerView = YouTubePlayerView()
+    private lazy var activityIndicator = UIActivityIndicatorView()
 
     init(movieDetails: MovieDetails, dataLoader: MovieCatalogDataLoader) {
         self.movieDetails = movieDetails
@@ -54,16 +51,24 @@ final class MovieDetailsViewController: UIViewController {
                 return
             }
             weakSelf.playerView.loadVideoURL(url)
-         }
+            weakSelf.activityIndicator.startAnimating()
+        }
     }
 
     private func showErrorAlert(_ error: Error?) {
+        let alert = UIAlertController(title: "There was an error displaying the trailer", message: error?.localizedDescription ?? "No trailers where found", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default))
 
+        present(alert, animated: true)
     }
 
     private func addSubviewsAndConstraints() {
         view.addSubview(backgroundImageView)
         backgroundImageView.edges(to: view)
+
+        view.addSubview(activityIndicator)
+        activityIndicator.center(in: view)
+
         view.addSubview(playerView)
         playerView.edges(to: view)
     }
