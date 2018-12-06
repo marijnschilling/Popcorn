@@ -25,6 +25,8 @@ class MovieCatalogViewController: UIViewController, UICollectionViewDataSource, 
         flowLayout.itemSize = CGSize(width: CGFloat(MovieCatalogViewController.itemWidth), height: 300)
         collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: flowLayout)
         super.init(nibName: nil, bundle: nil)
+
+        title = "Movie Catalog"
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -61,7 +63,9 @@ class MovieCatalogViewController: UIViewController, UICollectionViewDataSource, 
             self?.isLoadingMovieCatalog = false
          }
     }
+}
 
+extension MovieCatalogViewController {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return movies.count
     }
@@ -75,11 +79,11 @@ class MovieCatalogViewController: UIViewController, UICollectionViewDataSource, 
 
         cell.tag = indexPath.row
         dataLoader.downloadPosterImage(for: movie.posterPath) { image, error in
-          guard cell.tag == indexPath.row else { return }
+            guard cell.tag == indexPath.row else { return }
             cell.imageView.image = image
         }
 
-        // Load more movies when we are displaying the last cell
+        // Load more movies when we are displaying the last movie
         if (indexPath.item == movies.count - 1 ) {
             loadMovieCatalog()
         }
@@ -88,3 +92,13 @@ class MovieCatalogViewController: UIViewController, UICollectionViewDataSource, 
     }
 }
 
+extension MovieCatalogViewController {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let movie = movies[indexPath.item]
+        dataLoader.fetchMovieDetails(for: movie.id) { [weak self] details, error in
+            guard let details = details else { return }
+            let controller = MovieDetailsViewController(movieDetails: details)
+            self?.navigationController?.pushViewController(controller, animated: true)
+        }
+    }
+}
