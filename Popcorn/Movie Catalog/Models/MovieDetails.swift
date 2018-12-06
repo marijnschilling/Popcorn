@@ -6,15 +6,17 @@
 import Foundation
 
 struct MovieDetails: Codable {
+    let id: Int
     let title: String
     let tagline: String
     let overview: String
     let voteAverage: Double
     let releaseDate: Date
     let posterPath: String
-    let backdropPath: String
+    let backdropPath: String?
 
     private enum CodingKeys : String, CodingKey {
+        case id
         case title
         case tagline
         case overview

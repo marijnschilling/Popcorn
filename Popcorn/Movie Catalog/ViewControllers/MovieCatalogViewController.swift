@@ -10,7 +10,7 @@ import UIKit
 import TinyConstraints
 
 class MovieCatalogViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate  {
-    static let itemWidth = 200
+    private static let itemWidth: CGFloat = 200
 
     private var collectionView: UICollectionView
     private var dataLoader = MovieCatalogDataLoader()
@@ -22,7 +22,7 @@ class MovieCatalogViewController: UIViewController, UICollectionViewDataSource, 
     init() {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
-        flowLayout.itemSize = CGSize(width: CGFloat(MovieCatalogViewController.itemWidth), height: 300)
+        flowLayout.itemSize = CGSize(width: MovieCatalogViewController.itemWidth, height: 300)
         collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: flowLayout)
         super.init(nibName: nil, bundle: nil)
 
@@ -78,7 +78,7 @@ extension MovieCatalogViewController {
         let movie = movies[indexPath.item]
 
         cell.tag = indexPath.row
-        dataLoader.downloadPosterImage(for: movie.posterPath) { image, error in
+        dataLoader.downloadImage(for: movie.posterPath, width: MovieCatalogViewController.itemWidth) { image, error in
             guard cell.tag == indexPath.row else { return }
             cell.imageView.image = image
         }
@@ -96,8 +96,8 @@ extension MovieCatalogViewController {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let movie = movies[indexPath.item]
         dataLoader.fetchMovieDetails(for: movie.id) { [weak self] details, error in
-            guard let details = details else { return }
-            let controller = MovieDetailsViewController(movieDetails: details)
+            guard let details = details, let weakSelf = self else { return }
+            let controller = MovieDetailsViewController(movieDetails: details, dataLoader: weakSelf.dataLoader)
             self?.navigationController?.pushViewController(controller, animated: true)
         }
     }

@@ -86,9 +86,9 @@ final class MovieCatalogDataLoader {
         })
     }
 
-    func downloadPosterImage(for posterPath: String, completion: @escaping (_ poster: UIImage?, _ error: Error?) -> Void) {
+    func downloadImage(for path: String, width: CGFloat, completion: @escaping (_ image: UIImage?, _ error: Error?) -> Void) {
 
-        guard let url = URL.downloadPosterURL(forPosterPath: posterPath) else {
+        guard let url = URL.downloadImageURL(forPath: path, width: width) else {
             completion(nil, MovieCatalogDataLoaderError.invalidURL)
             return
         }

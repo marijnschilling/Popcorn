@@ -29,7 +29,7 @@ class ExtensionsTest: XCTestCase {
     }
 
     func testPosterURL() {
-        let youTubeURL = URL.downloadPosterURL(forPosterPath: "/image.jpg")
+        let youTubeURL = URL.downloadImageURL(forPath: "/image.jpg", width: 200.0)
         XCTAssertEqual(youTubeURL?.absoluteString, "https://image.tmdb.org/t/p/w200/image.jpg")
     }
 }

@@ -3,7 +3,7 @@
 // Copyright (c) 2018 Marijn Schilling. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension URL {
     static func youTubeURL(for key: String) -> URL? {
@@ -38,11 +38,11 @@ extension URL {
         return components.url
     }
 
-    static func downloadPosterURL(forPosterPath posterPath: String) -> URL? {
+    static func downloadImageURL(forPath path: String, width: CGFloat) -> URL? {
         var components = URLComponents()
         components.scheme = "https"
         components.host = "image.tmdb.org"
-        components.path = "/t/p/w\(MovieCatalogViewController.itemWidth)\(posterPath)"
+        components.path = "/t/p/w\(Int(width))\(path)"
 
         return components.url
     }
